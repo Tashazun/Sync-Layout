@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import "./App.scss";
 import Logo from "../assets/BASALT_master_main.svg";
-import HeroSm from "../assets/hero-small.png";
 import Gear from "../assets/002-settings.svg";
 import Book from "../assets/001-reader.svg";
 import Shield from "../assets/003-firewall.svg";
@@ -20,7 +19,7 @@ class App extends Component {
           </ul>
         </header>
         <section className="App-page">
-          <img id="hero" src={HeroSm} alt="Pile of blocks" />
+          <div id="hero" />
           <div id="overlay">
             <h1>Design Systems</h1>
             <h2>Find Out More</h2>

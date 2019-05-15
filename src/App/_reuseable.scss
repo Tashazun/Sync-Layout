@@ -39,12 +39,18 @@ $desktop-width: 1024px;
 
 // reusable styles
 
-%blurb-styles {
+@mixin heroImage($property) {
+  width: 100%;
+  background: url($property) center center no-repeat;
+  background-size: cover;
+}
+
+@mixin blurbStyles($margin) {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 4em;
+  margin: $margin;
 
   img {
     width: 10em;
@@ -60,5 +66,16 @@ $desktop-width: 1024px;
     text-align: center;
     font-family: "Montserrat", sans-serif;
     @include responsive-font(2vw, 16px, 20px);
+  }
+}
+%blurb-styles {
+  @include blurbStyles(4em);
+
+  @include tablet {
+    @include blurbStyles(2em);
+  }
+
+  @include desktop {
+    @include blurbStyles(2em);
   }
 }

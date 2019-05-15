@@ -11,10 +11,30 @@
     display: flex;
     flex-direction: column;
 
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include desktop {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     #logo {
       margin-top: 0.5em;
       height: 5vh;
       width: auto;
+
+      @include tablet {
+        margin: 0.5em;
+      }
+
+      @include desktop {
+        margin: 0.8em;
+      }
     }
 
     #nav-buttons {
@@ -25,11 +45,20 @@
       align-items: center;
       justify-content: space-evenly;
 
+      @include tablet {
+        width: 50%;
+      }
+
+      @include desktop {
+        width: 60%;
+      }
+
       li {
         width: 30%;
         height: 35%;
         padding-top: 0.5em;
         font-family: "Karla", sans-serif;
+        @include responsive-font(2vw, 16px, 20px);
         list-style: none;
         text-align: center;
       }
@@ -49,8 +78,16 @@
     grid-template-rows: repeat(2fr);
 
     #hero {
-      width: 100%;
       grid-area: 1/1/2/4;
+      @include heroImage("../assets/hero-small.png");
+
+      @include tablet {
+        @include heroImage("../assets/hero-mid.png");
+      }
+
+      @include desktop {
+        @include heroImage("../assets/hero.png");
+      }
     }
 
     #overlay {
@@ -61,7 +98,7 @@
 
       h1 {
         color: white;
-        @include responsive-font(4vw, 40px, 90px);
+        @include responsive-font(10vw, 40px, 90px);
         font-family: "Karla", sans-serif;
       }
 
@@ -101,10 +138,20 @@
     }
   }
 
+  // SVG images and small blurbs
+
   .App-blurbs {
     width: 100%;
     background: black;
     color: white;
+
+    @include tablet {
+      display: flex;
+    }
+
+    @include desktop {
+      display: flex;
+    }
 
     #basalt {
       @extend %blurb-styles;
@@ -125,5 +172,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    @include responsive-font(2vw, 16px, 18px);
+
+    @include tablet {
+      justify-content: flex-start;
+    }
+
+    @include desktop {
+      justify-content: flex-start;
+    }
   }
 }
