@@ -2,7 +2,10 @@ import React, { Component } from "react";
 
 import "./App.scss";
 import Logo from "../assets/BASALT_master_main.svg";
-import Hero from "../assets/hero.png";
+import HeroSm from "../assets/hero-small.png";
+import Gear from "../assets/002-settings.svg";
+import Book from "../assets/001-reader.svg";
+import Shield from "../assets/003-firewall.svg";
 
 class App extends Component {
   render() {
@@ -17,7 +20,16 @@ class App extends Component {
           </ul>
         </header>
         <section className="App-page">
-          <img id="hero" src={Hero} alt="Pile of blocks" />
+          <img id="hero" src={HeroSm} alt="Pile of blocks" />
+          <div id="overlay">
+            <h1>Design Systems</h1>
+            <h2>Find Out More</h2>
+            <div id="ellipsis">
+              <div id="dot1" className="dot" />
+              <div className="dot" />
+              <div className="dot" />
+            </div>
+          </div>
           <div id="info">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
@@ -30,14 +42,36 @@ class App extends Component {
               elementum mollis. Ut nec pellentesque nulla. Vivamus ultrices
               augue elit, eget scelerisque nisl pulvinar nec. Nulla vulputate,
               mauris non vestibulum elementum, lectus magna viverra ipsum, a
-              fringilla eros nunc porta eros. In cursus faucibus mi nec
-              eleifend. Nullam scelerisque blandit nunc eget ornare. Proin quis
-              lorem aliquet, venenatis lorem eget, porta felis. Aliquam laoreet
-              lacus eget tortor dapibus, non mollis lorem faucibus.
+              fringilla eros nunc porta eros.
             </p>
           </div>
         </section>
-        <footer>Tasha Zuniga</footer>
+        <section className="App-blurbs">
+          <article id="basalt">
+            <img id="book" src={Book} alt="Book" />
+            <h3>Basalt</h3>
+            <p>
+              Ut id nulla urna. In at vestibulum mi, ac placerat augue. Maecenas
+              pretium rhoncus dictum.
+            </p>
+          </article>
+          <article id="tech">
+            <img id="gear" src={Gear} alt="Gear" />
+            <h3>Tech</h3>
+            <p>Quisque mi neque, rutrum a tempor sagittis, aliquet ut velit.</p>
+          </article>
+          <article id="challenge">
+            <img id="shield" src={Shield} alt="Shield" />
+            <h3>challenge</h3>
+            <p>
+              Curabitur malesuada magna neque, vitae feugiat eros molestie
+              vitae.{" "}
+            </p>
+          </article>
+        </section>
+        <footer className="App-footer">
+          <p>&copy; Tasha Zuniga, All Rights Reserved</p>
+        </footer>
       </div>
     );
   }

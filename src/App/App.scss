@@ -1,23 +1,23 @@
+@import "./reuseable";
+
 .App-container {
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
 
   // App Header
 
   .App-header {
-    width: 100%;
     display: flex;
     flex-direction: column;
 
     #logo {
+      margin-top: 0.5em;
       height: 5vh;
       width: auto;
     }
 
     #nav-buttons {
-      width: 100%;
       height: 4em;
       margin: 0;
       padding: 0;
@@ -44,5 +44,86 @@
   // Page hero image and content
 
   .App-page {
+    display: grid;
+    grid-template-columns: repeat(3fr);
+    grid-template-rows: repeat(2fr);
+
+    #hero {
+      width: 100%;
+      grid-area: 1/1/2/4;
+    }
+
+    #overlay {
+      grid-area: 1/1/2/4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+        color: white;
+        @include responsive-font(4vw, 40px, 90px);
+        font-family: "Karla", sans-serif;
+      }
+
+      h2 {
+        margin: 0;
+        background: #d4cb02;
+        padding: 0.2em;
+        border: 5px solid black;
+        @include responsive-font(4vw, 30px, 70px);
+        font-family: "Karla", sans-serif;
+      }
+
+      #ellipsis {
+        display: flex;
+        justify-content: space-evenly;
+        .dot {
+          margin: 0.5em;
+          height: 0.7em;
+          width: 0.7em;
+          border-radius: 50%;
+          background: #d4cb02;
+        }
+
+        #dot1 {
+          background: white;
+        }
+      }
+    }
+
+    #info {
+      grid-area: 2/1/3/4;
+      p {
+        padding: 2em;
+        font-family: "Montserrat", sans-serif;
+        @include responsive-font(2vw, 16px, 20px);
+      }
+    }
+  }
+
+  .App-blurbs {
+    width: 100%;
+    background: black;
+    color: white;
+
+    #basalt {
+      @extend %blurb-styles;
+    }
+
+    #tech {
+      @extend %blurb-styles;
+    }
+
+    #challenge {
+      @extend %blurb-styles;
+    }
+  }
+
+  .App-footer {
+    height: 5em;
+    margin: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
